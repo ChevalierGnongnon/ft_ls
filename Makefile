@@ -3,7 +3,9 @@ CC=cc
 
 CFLAGS = -I libft -Wall -Wextra -Werror -g3
 
-FILES=main
+FILES=main \
+	parsing/parsing \
+	errors/errors
 
 SOURCES= $(foreach f, $(FILES), srcs/$(f).c)
 OBJECTS= $(foreach f, $(FILES), objects/$(f).o)

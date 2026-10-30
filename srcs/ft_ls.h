@@ -4,11 +4,12 @@
 
 typedef struct args{
     char    **argv;
-    char    **options;
+    char    **files;
+    char    *options;
     int     argc;
 } t_args;
 
-int     fatalError();
-
+void    fatalError(void);
+int     getOptions(t_args *args);
 
 #endif

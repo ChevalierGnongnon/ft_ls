@@ -11,6 +11,7 @@ t_args  *initArgs(int argc, char **argv){
     args->argc = argc;
     args->argv = argv;
     args->options = NULL;
+    args->files = NULL;
     return (args);
 }
 
