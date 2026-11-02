@@ -5,7 +5,8 @@ CFLAGS = -I libft -Wall -Wextra -Werror -g3
 
 FILES=main \
 	parsing/parsing \
-	errors/errors
+	errors/errors \
+	cleaning/free
 
 SOURCES= $(foreach f, $(FILES), srcs/$(f).c)
 OBJECTS= $(foreach f, $(FILES), objects/$(f).o)
