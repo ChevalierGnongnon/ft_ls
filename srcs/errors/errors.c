@@ -4,6 +4,7 @@ void    invalidOption(t_args *args, char option){
     ft_putstr_fd("ls: invalid option -- '", 2);
     ft_putchar_fd(option, 2);
     ft_putstr_fd("'\n", 2);
+    ft_putstr_fd("Try ls --help for more informations\n", 2);
     if (args)
         freeArgs(args);
     exit(2);

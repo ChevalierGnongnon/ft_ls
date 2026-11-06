@@ -51,12 +51,12 @@ int     getArguments(t_args *args){
 
     fileNumber = 0;
     optionsAvailable = 1;
-    args->files = ft_calloc(1, sizeof(char *));
+    args->files = ft_calloc(2, sizeof(char *));
     if (!args->files)
         return (0);
     if (args->argc > 1){
         for (int i = 1; i < args->argc; i++){
-            if (optionsAvailable && ft_strlen(args->argv[i]) == 2 && ft_strncmp(args->argv[i], "--", 2) == 0)
+            if (optionsAvailable && ft_strlen(args->argv[i]) == 2 && strcmp(args->argv[i], "--") == 0)
                 optionsAvailable = 0;
             else if (optionsAvailable && args->argv[i][0] == '-' && ft_strlen(args->argv[i]) > 1){
                 if (checkOptions(args, args->argv[i]))
@@ -75,6 +75,11 @@ int     getArguments(t_args *args){
             }
         }
     }
+    int j = 0;
+    while (args->files[j])
+        j++;
+    if (j == 0)
+        args->files[0] = ".";
     display(args);
     
     return (1);
