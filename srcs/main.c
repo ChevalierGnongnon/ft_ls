@@ -43,7 +43,7 @@ int main(int argc, char **argv){
 
     args = initArgs(argc, argv);
     if(!args){
-        fatalError();
+        fatalError(NULL);
         exit(2);
     }
     getArguments(args);
